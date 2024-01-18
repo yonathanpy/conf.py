@@ -1,0 +1,25 @@
+import configparser
+
+# Create a configparser object
+config = configparser.ConfigParser()
+
+# Read the configuration file
+config.read('sample_config.ini')
+
+# Access configuration values
+db_host = config.get('Database', 'db_host')
+db_port = config.getint('Database', 'db_port')
+db_name = config.get('Database', 'db_name')
+db_user = config.get('Database', 'db_user')
+db_password = config.get('Database', 'db_password')
+
+server_host = config.get('Server', 'host')
+server_port = config.getint('Server', 'port')
+
+log_level = config.get('Logging', 'log_level')
+log_file = config.get('Logging', 'log_file')
+
+# Use the configuration values as needed in your program
+print(f"Database Host: {db_host}")
+print(f"Server Port: {server_port}")
+print(f"Log Level: {log_level}")
